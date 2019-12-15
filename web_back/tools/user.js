@@ -21,12 +21,14 @@ var user = {
 
 
     // 设置logout方法,用来进行退出请求操作
-    login: function (options) {
+    logout: function (options) {
         $.ajax({
             type: 'post',
             url: LOGOUT,
             success: function (res) {
-                if (res === 200) {
+                console.log(res);
+
+                if (res.code === 200) {
                     options.success();
                 } else {
                     options.fail();
