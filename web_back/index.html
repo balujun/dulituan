@@ -149,7 +149,18 @@
 
     })
 
-
+    /*
+    用户基本信息展示
+        步骤:
+        1页面加载过程中直接请求用户信息
+        2将响应数据展示在页面即可
+    */
+    user.getUser({
+        success: function (res) {
+            $('.user_info img,.user_link img').prop('src', res.data.user_pic);
+            $('.user_info span').text('欢迎' + res.data.nickname);
+        }
+    })
 
 
 

@@ -35,5 +35,18 @@ var user = {
                 }
             }
         })
+    },
+    getUser: function (options) {
+        $.ajax({
+            url: GET_USER,
+            success: function (res) {
+                if (res.code === 200) {
+                    options.success(res);
+                }
+            }
+        })
+
     }
 }
+
+// 设置getUser方法,用来获取基本信息(头像和昵称)
